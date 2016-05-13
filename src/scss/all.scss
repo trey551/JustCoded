@@ -2,5 +2,33 @@
 @import '_vars';
 @import 'bourbon/_bourbon';
 
+html{
+	height:100%;
+	background:$bg;
+}
+body{
+	font-family:$common-font;
+	font-size:14px;
+	line-height:1.2;
+	min-width:320px;
+	position:relative;
+	color:$color-text;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight:normal;
+}
+a{
+	color:$color-links;
+	text-decoration:none;
 
+	&:hover{
+		text-decoration:none;
+	}
+}
+.container{
+	width:100%;
+	@include clearfix;
+}
+
+@import '_header';
 @import '_media';

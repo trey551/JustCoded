@@ -16,6 +16,9 @@ module.exports = function (grunt) {
             },
         },
         sass: { 
+            options: {
+                sourceMap: true
+            },
             dist: {
               files: [{
                 expand: true,
@@ -98,9 +101,7 @@ module.exports = function (grunt) {
           dist: {
             src: [
               '<%=bower_dir%>/jquery/dist/jquery.min.js',
-              '<%=bower_dir%>/vivus/dist/vivus.js',
-              '<%=bower_dir%>/velocity/velocity.min.js',
-              '<%=bower_dir%>/velocity/velocity.ui.min.js',
+              // '<%=bower_dir%>/flexslider/velocity.ui.min.js',
               '<%= src_dir %>/js/main.js'
               ],
             dest: '<%= build_dir %>/js/main.js',
