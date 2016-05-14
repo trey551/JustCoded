@@ -1,34 +1,62 @@
 @import '_normalize';
 @import '_vars';
 @import 'bourbon/_bourbon';
+html {
+    height: 100%;
+    background: $bg;
+}
 
-html{
-	height:100%;
-	background:$bg;
+body {
+    font-family: $common-font;
+    font-weight:300;
+    font-size: 14px;
+    line-height: 1.2;
+    min-width: 320px;
+    position: relative;
+    color: $color-text;
 }
-body{
-	font-family:$common-font;
-	font-size:14px;
-	line-height:1.2;
-	min-width:320px;
-	position:relative;
-	color:$color-text;
-}
-h1,h2,h3,h4,h5,h6{
-	font-weight:normal;
-}
-a{
-	color:$color-links;
-	text-decoration:none;
 
-	&:hover{
-		text-decoration:none;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300;
+}
+
+a {
+    color: $color-links;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.container {
+    width: 100%;
+    @include clearfix;
+}
+.main-heading{
+	font-size:1.07em;
+}
+.button{
+	color:#fff;
+	font-size:1.14em;
+	display:inline-block;
+	background:$bg-button;
+	padding:0.4em 0.6em;
+
+	.ico-button{
+		width:1.21em;
+		height:1.21em;
+		display:inline-block;
+		vertical-align:top;
+		margin:0 0.2em 0 0;
 	}
-}
-.container{
-	width:100%;
-	@include clearfix;
 }
 
 @import '_header';
-@import '_media';
+@import '../css/flexslider';
+@import '_slider';
+@import '_features';

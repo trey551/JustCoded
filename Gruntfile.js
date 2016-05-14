@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, cwd: '<%= src_dir %>', src: ['fonts/**', 'images/**', '**/*.html'], dest: '<%= build_dir %>'}
+                    {expand: true, cwd: '<%= src_dir %>', src: ['**/fonts/**', 'images/**', '**/*.html'], dest: '<%= build_dir %>'}
                 ]
             },
         },
@@ -84,13 +84,13 @@ module.exports = function (grunt) {
                 }
             }
         },
-        imagemin: {                          // Task 
+        imagemin: {
               target: {
                   files: [{
-                    expand: true,                  // Enable dynamic expansion 
-                    cwd: '<%= src_dir %>',                   // Src matches are relative to this path 
-                    src: ['images/*.{png,jpg,gif}'],   // Actual patterns to match 
-                    dest: '<%= build_dir %>'                  // Destination path prefix 
+                    expand: true,
+                    cwd: '<%= src_dir %>',
+                    src: ['images/*.{png,jpg,gif}'],
+                    dest: '<%= build_dir %>'
                   }]
               }
           },
@@ -101,8 +101,7 @@ module.exports = function (grunt) {
           dist: {
             src: [
               '<%=bower_dir%>/jquery/dist/jquery.min.js',
-              // '<%=bower_dir%>/flexslider/velocity.ui.min.js',
-              '<%= src_dir %>/js/main.js'
+              '<%= src_dir %>/**/*.js'
               ],
             dest: '<%= build_dir %>/js/main.js',
           },
@@ -113,11 +112,11 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    // grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
-    grunt.loadNpmTasks('grunt-spritesmith');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    // grunt.loadNpmTasks('grunt-spritesmith');
+    // grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-concat');
 
@@ -129,11 +128,11 @@ module.exports = function (grunt) {
         'sass',
         // 'cssmin',
         // 'imagemin',
-        'browserSync'
     ]);
 
     grunt.registerTask('start', [
         'build',
-        'watch'
+        'browserSync',
+        'watch',
     ]);
 };
