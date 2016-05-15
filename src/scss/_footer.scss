@@ -1,0 +1,11 @@
+.footer{
+	width:100%;
+	@include clearfix;
+	text-align:center;
+	border-top:1px solid #e5e5e5;
+	padding:1em 0;
+
+	.copy-text{
+		font-size:0.57em;
+	}
+}

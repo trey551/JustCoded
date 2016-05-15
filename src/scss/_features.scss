@@ -1,6 +1,36 @@
 .features-block{
 	width:100%;
+	font-weight:400;
+	margin:0 0 2em;
+
 	&__item{
 		width:100%;
+		@include clearfix;
+		padding:0.78em 5%; /* 11/14 */
+		border-bottom:1px solid #ccc;
+		display:table;
+	}
+	&__text-block{
+		display:table-cell;
+		vertical-align:middle;
+	}
+
+	&__ico-holder{
+		width:30%;
+		@extend .features-block__text-block
+	}
+
+	&__ico{
+		float:left;
+		margin:0 0.78em 0 0;
+	}
+
+	&__text-heading{
+		color:$color-featured-heading;
+		font-size:1.25em;
+	}
+
+	&__text{
+		font-size:0.71em;
 	}
 }

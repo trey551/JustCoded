@@ -1,88 +1,70 @@
-.header{
-	width:100%;
-	position:relative;
-	padding:14px 10px;
-	@include clearfix;
-}
-.main-logo{
-	float:left;
-	background:url(../images/main-logo.png) no-repeat;
-	text-indent:-9999px;
-	width:104px;
-	height:26px;
-	-webkit-background-size:cover;
-	background-size:cover;
-
-	a{
-		display:block;
-		height:100%;
-	}
+.header {
+    width: 100%;
+    position: relative;
+    padding: 14px 10px;
+    @include clearfix;
 }
 
-.main-menu{
-	position:fixed;
-	top:0;
-	right:0;
-	height:100%;
-	text-transform:uppercase;
-	z-index:2;
-	background: rgba(12, 11, 12, .8);
-
-
-	.main-menu__holder{
-		width:120px;
-		padding: 0.625em;
-		margin:0 -120px 0 0;
-		@include transition(all 0.5s $ease-out-expo);
-	}
-
-	#menu-opener{
-		display:none;
-
-		&:checked + .main-nav-holder{
-			margin:0;
-		}
-	}
-
-	li{
-		margin:5px 0 0 0;
-
-		&:first-child{
-			margin:0;
-		}
-	}
-
-	a{
-		text-decoration:none;
-		color:#fff;
-
-		&:hover,
-		&:focus{
-			color:$color-links;
-		}
-	}
-
-	&.expanded{
-		margin: 0;
-	}
+.main-logo {
+    float: left;
+    // background: url(../images/main-logo.png) no-repeat;
+    // text-indent: -9999px;
+    width: 104px;
+    height: 26px;
+    // -webkit-background-size: cover;
+    // background-size: cover;
+    a {
+        display: block;
+        height: 100%;
+    }
 }
-.main-menu__opener {
-	background:$bg-button-menu;
-	padding: 0.64em;
-	border-radius: 0.28em;
-	position:absolute;
-	top:0.7em;
-	left:-3.5em;
 
-	  .icon-bar {
-	    display: block;
-	    width: 1.35em;
-	    height: 0.21em;
-	    border-radius: 0.07em;
-	    background: #fff;
-
-	    &+.icon-bar{
-	    	margin-top: 0.28em;
-	    }
-	  }
+.main-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    text-transform: uppercase;
+    z-index: 2;
+    background: rgba(12, 11, 12, .8);
+    &__holder {
+        width: 120px;
+        padding: 0.625em;
+        margin: 0 -120px 0 0;
+        @include transition(all 0.5s $ease-out-expo);
+    }
+    #menu-opener {
+        display: none;
+        &:checked + .main-nav-holder {
+            margin: 0;
+        }
+    }
+    li {
+        margin: 5px 0 0 0;
+        &:first-child {
+            margin: 0;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: #fff;
+        &:hover,
+        &:focus {
+            color: $color-links;
+        }
+    }
+    &.expanded {
+        margin: 0;
+    }
+    &__opener {
+        position: absolute;
+        top: 1.3em;
+        left: -3.1em;
+        width: 29px;
+        height: 22px;
+        
+        &-button {
+            width: 100%;
+        }
+    }
 }

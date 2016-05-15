@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, cwd: '<%= src_dir %>', src: ['**/fonts/**', 'images/**', '**/*.html'], dest: '<%= build_dir %>'}
+                    {expand: true, cwd: '<%= src_dir %>', src: ['**/fonts/**', 'images/**'], dest: '<%= build_dir %>'}
                 ]
             },
         },
@@ -54,7 +54,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= src_dir %>/**/*.html'
                 ],
-                tasks: ['copy']
+                tasks: ['htmlrender']
             },
             js: {
                 files: [
@@ -106,6 +106,21 @@ module.exports = function (grunt) {
             dest: '<%= build_dir %>/js/main.js',
           },
         },
+        htmlrender: {
+            build: {
+              options: {
+                src: ['src/**/*.html'],
+                vars: {}
+              },
+              files: [{
+                expand: true,
+                cwd: '<%= src_dir %>',
+                src: ['*.html'],
+                dest: '<%= build_dir %>',
+                ext: '.html'
+              }]
+            },
+          },
     };
 
     grunt.initConfig(config);
@@ -119,9 +134,11 @@ module.exports = function (grunt) {
     // grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-htmlrender');
 
     grunt.registerTask('build', [
         'clean',
+        'htmlrender',
         // 'sprite',
         'copy',
         'concat',
