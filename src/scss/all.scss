@@ -12,6 +12,7 @@ body {
     font-weight:300;
     font-size: 14px;
     line-height: 1.2;
+    letter-spacing: 0.3px;
     min-width: 320px;
     position: relative;
     color: $color-text;
@@ -48,14 +49,48 @@ a {
 	font-size:1.14em;
 	display:inline-block;
 	background:$bg-button;
-	padding:0.4em 0.6em;
+	padding:0.4em 0.4em;
 
 	.ico-button{
-		width:1.21em;
-		height:1.21em;
+		width:22px;
+		height:23px;
 		display:inline-block;
 		vertical-align:top;
 		margin:0 0.2em 0 0;
+	}
+}
+
+@media screen and (min-width: 480px) {
+	body{
+		font-size:16px;
+	}
+}
+@media screen and (min-width: 720px) {
+	.is-mobile{
+		display:none;
+	}
+	.container{
+		padding:0 15px;
+	}
+	// body{
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	min-height: 100vh;
+	// 	height:100%;
+	// }
+	// .main{
+	// 	flex: 1;
+	// }
+}
+
+@media screen and (min-width: 1024px) {
+	.container{
+		max-width:1024px;
+		margin:0 auto;
+	}
+	.button{
+		font-size:22px;
+		line-height:23px;
 	}
 }
 
@@ -66,9 +101,3 @@ a {
 @import '_features';
 @import '_cart-block';
 @import '_footer';
-
-@media screen and (min-width: 640px) {
-	body{
-		font-size:16px;
-	}
-}

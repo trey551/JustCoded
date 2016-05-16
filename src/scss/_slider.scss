@@ -1,13 +1,14 @@
 .main-slider {
     width: 100%;
+    overflow:hidden;
     margin: 0;
     padding: 0;
     border: none;
+
     .slide {
         position: relative;
         &.flex-active-slide .main-slider__inner{
         	opacity:1;
-        	top:0;
         	left:0;
         }
     }
@@ -15,24 +16,25 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        top: 2em;
+        top: 0;
         left: 2em;
         color: #fff;
-        padding: 2% 5% 0;
+        padding: 3% 5% 0;
         display: table;
         vertical-align: middle;
         line-height:1.14em;
         opacity:0;
-        -webkit-transition:all 0.5s linear;
-        -moz-transition:all 0.5s linear;
-        -ms-transition:all 0.5s linear;
-        -o-transition:all 0.5s linear;
-        transition:all 0.5s linear;
+        -webkit-transition:all 0.3s linear 0.5s;
+        -moz-transition:all 0.3s linear 0.5s;
+        -ms-transition:all 0.3s linear 0.5s;
+        -o-transition:all 0.3s linear 0.5s;
+        transition:all 0.3s linear 0.5s;
 
         &-img {
             display: table-cell;
             vertical-align: middle;
-            width: 33%;
+            width: 41%;
+            padding: 0 0 0 10%;
             img {
                 display: inline-block !important;
             }
@@ -40,8 +42,7 @@
         &-text {
             display: table-cell;
             vertical-align: middle;
-            padding:0 0 0 7%;
-            line-height:17px;
+            padding:0 0 0 9%;
         }
     }
     &__text{
@@ -52,9 +53,60 @@
     	font-size:1.07em;
     }
     .button{
-    	margin:5px 0 0 0;
+    	margin:31px 0 0 15px;
+    }
+    .flex-direction-nav{
+    	display:none;
     }
 }
-.flex-direction-nav{
-	display:none;
+
+@media screen and (min-width: 720px){
+    .main-slider{
+        margin:0 0 66px;
+
+        &:after{
+            content:"";
+            position:absolute;
+            bottom:-1px;
+            left:0;
+            height:8px;
+            width:100%;
+            background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAICAYAAABzskasAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQyMThDRjYxMUI0RDExRTY5QjM2QTdEN0I5RkFEMEE1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQyMThDRjYyMUI0RDExRTY5QjM2QTdEN0I5RkFEMEE1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDIxOENGNUYxQjREMTFFNjlCMzZBN0Q3QjlGQUQwQTUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDIxOENGNjAxQjREMTFFNjlCMzZBN0Q3QjlGQUQwQTUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5SB/ZdAAABA0lEQVR42qzRvUtCURzGcY2MBlPQxVyMHNzERYJAaWttcHbWSRBa2oOGBmnXzX9AnXPSOVzEBiFqCcJAEcK3n98LN7Ljudcz+MBnOs89PPder4h4NElijr7HLD5coofvHd1TnKOzdWKNUUTwgjaONec6N/jC7Y7eIWr4QEI9V8tBtOQvDwZDLvBp9ye4cuneYWV3Owg7jfGjLv+zQN7l8hTelGeGiGu6BcyVbhVH6pgDVESfMTKay8/Qc3jG+sUnG90cfjQ96yuV1DFlLMU5A8Q2Lg/hWdzzBC+yGLn0prj+HVN0WK2mCR8CaBj0Z7jHq0H3HVFrTFfM84i0/Tb7TnctwAC22m7iTlD4yAAAAABJRU5ErkJggg==) repeat-x;
+            // background:url(../images/patt01.png) repeat-x;
+        }
+        .flex-direction-nav a:before{
+            content:""
+        }
+        .flex-direction-nav a.flex-next:before{
+            content:""
+        }
+    }
+    .main-slider{
+        &__text{
+            font-size:18px;
+            line-height:30px;
+        }
+
+        &__heading{
+            font-size:30px;
+        }
+
+        .flex-direction-nav{
+            display:block;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .main-slider{
+        &__text{
+            font-size:25px;
+            line-height:44px;
+        }
+
+        &__heading{
+            font-size:39px;
+            margin:2px 0 19px 0;
+        }
+    }
 }
