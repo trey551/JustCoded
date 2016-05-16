@@ -16,6 +16,7 @@ body {
     min-width: 320px;
     position: relative;
     color: $color-text;
+    @include transition(all 0.5s $ease-out-expo);
 }
 
 h1,
@@ -42,21 +43,21 @@ a {
 .main{
 	width:100%;
 	@include clearfix;
-	padding:0 0 1em;
+	padding:0 0 1.35em;
 }
 .button{
 	color:#fff;
-	font-size:1.14em;
+	font-size:1em;
 	display:inline-block;
 	background:$bg-button;
-	padding:0.4em 0.4em;
+	padding:0.35em 0.5em;
 
 	.ico-button{
-		width:22px;
-		height:23px;
+		width:1.21em;
+		height:1.28em;
+		margin:0 0.14em 0 0;
 		display:inline-block;
 		vertical-align:top;
-		margin:0 0.2em 0 0;
 	}
 }
 
@@ -81,16 +82,25 @@ a {
 	// .main{
 	// 	flex: 1;
 	// }
+	.button{
+		font-size:22px;
+		line-height:23px;
+		padding:0.4em 0.4em;
+
+		.ico-button{
+			width:22px;
+			height:23px;
+		}
+	}
+	.main{
+		padding:0 0 44px;
+	}
 }
 
 @media screen and (min-width: 1024px) {
 	.container{
 		max-width:1024px;
 		margin:0 auto;
-	}
-	.button{
-		font-size:22px;
-		line-height:23px;
 	}
 }
 

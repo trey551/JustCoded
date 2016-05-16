@@ -1,7 +1,7 @@
 .header {
     width: 100%;
     position: relative;
-    padding: 14px 10px;
+    padding: 11px 17px 6px;
     @include clearfix;
 }
 
@@ -23,18 +23,11 @@
     text-transform: uppercase;
     z-index: 2;
     background: rgba(12, 11, 12, .8);
-
     &__holder {
         width: 120px;
         padding: 0.625em;
         margin: 0 -120px 0 0;
         @include transition(all 0.5s $ease-out-expo);
-    }
-    #menu-opener {
-        display: none;
-        &:checked + .main-nav-holder {
-            margin: 0;
-        }
     }
     &__item {
         margin: 5px 0 0 0;
@@ -50,64 +43,67 @@
             }
         }
     }
-    &.expanded {
-        margin: 0;
-    }
     &__opener {
         position: absolute;
-        top: 1.3em;
-        left: -3.1em;
+        top: 13px;
+        left: -42px;
         width: 29px;
         height: 22px;
-        
         &-button {
             width: 100%;
         }
     }
 }
 
-@media screen and (min-width: 720px){
-    .header{
-        padding:24px 0 0;
+body.expanded .main-menu__holder {
+    margin: 0;
+}
 
-        .container{
-            padding:0 2% 0 2.4%;
+body.expanded {
+    margin: 0 0 0 -120px;
+    padding: 0 120px 0 0;
+}
+
+@media screen and (min-width: 720px) {
+    .header {
+        padding: 24px 0 0;
+        .container {
+            padding: 0 2% 0 2.4%;
         }
     }
-    .main-menu{
-        position:static;
-        background:none;
-        float:right;
-        margin:23px 0 0 0;
-
-        &__holder{
-            margin:0;
-            width:auto;
-            padding:0;
+    .main-menu {
+        position: static;
+        background: none;
+        float: right;
+        margin: 23px 0 0 0;
+        &__holder {
+            margin: 0;
+            width: auto;
+            padding: 0;
         }
-        &__item{
-            display:inline-block;
-            vertical-align:bottom;
-            margin:0 0 0 33px;
-            a{
-                color:#6c6c6c;
-                border-bottom:3px solid #fff;
-                display:block;
-                margin:0;
-                font-size:20px;
-                text-transform:none;
-                padding:0 0 15px;
-                &:hover{
+        &__item {
+            display: inline-block;
+            vertical-align: bottom;
+            margin: 0 0 0 33px;
+            a {
+                color: #6c6c6c;
+                border-bottom: 3px solid #fff;
+                display: block;
+                margin: 0;
+                font-size: 1.25em;
+                text-transform: none;
+                padding: 0 0 15px;
+                &:hover {
                     border-color: #5094f2;
                 }
             }
-            &.active a{
+            &.active a {
                 border-color: #5094f2;
             }
         }
     }
-    .main-logo{
-        width:178px;
-        height:44px;
+    .main-logo {
+        width: 178px;
+        height: 44px;
     }
 }

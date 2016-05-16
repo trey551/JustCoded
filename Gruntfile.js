@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, cwd: '<%= src_dir %>', src: ['**/fonts/**', 'images/**'], dest: '<%= build_dir %>'}
+                    {expand: true, cwd: '<%= src_dir %>', src: ['**/fonts/**'], dest: '<%= build_dir %>'}
                 ]
             },
         },
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
                   files: [{
                     expand: true,
                     cwd: '<%= src_dir %>',
-                    src: ['images/*.{png,jpg,gif}'],
+                    src: ['images/**/*.{png,jpg,gif}'],
                     dest: '<%= build_dir %>'
                   }]
               }
@@ -127,11 +127,11 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    // grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
     // grunt.loadNpmTasks('grunt-spritesmith');
-    // grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-htmlrender');
@@ -143,8 +143,8 @@ module.exports = function (grunt) {
         'copy',
         'concat',
         'sass',
-        // 'cssmin',
-        // 'imagemin',
+        'cssmin',
+        'imagemin',
     ]);
 
     grunt.registerTask('start', [
